@@ -34,15 +34,18 @@ i = 0;
 while (numeroUtente.length < (100 - 16)) {
     var insertNumber = Number (prompt("Inserisci un numero da 1 a 100"));
     if (numeroUtente.includes(insertNumber)){
-        alert("Hai già inserito questo numero")
+        alert("Hai già inserito questo numero. Riprova!")
 
     } else {
         numeroUtente.push(insertNumber);
 
         if (numeroPc.includes(insertNumber)){
             alert("Hai perso")
-        } else {
-            alert("Vai avanti")
+            break;
+
+        } else if (numeroUtente.length == (100 - 16)) {
+            alert("Hai vinto!!");	       
+            alert("Hai vinto il gioco con un punteggio di " + (numeroUtente.length));
         }
 
     }
